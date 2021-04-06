@@ -1,11 +1,15 @@
 package middlew
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/mberoiza/twittor/routers"
+)
 
 
 func ValidoJWT(next http.HandlerFunc) http.HandlerFunc{
     return func(w http.ResponseWriter, r *http.Request) {
-        _,_,_,err:=routes.ProcesoToken(r.Header.Get("Autorization"))
+        _,_,_,err:=routers.ProcesoToken(r.Header.Get("Autorization"))
         if err!=nil{
             http.Error(w,"Error en el Token ! "+err.Error(), http.StatusBadRequest)
             return
