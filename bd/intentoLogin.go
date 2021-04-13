@@ -1,8 +1,8 @@
 package bd
 
 import (
-	"github.com/mberoiza/twittor/models"
-	"golang.org/x/crypto/bcrypt"
+    "github.com/mberoiza/twittor/models"
+    "golang.org/x/crypto/bcrypt"
 )
 
 
